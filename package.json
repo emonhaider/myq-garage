@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "offline": "tsc && serverless offline start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
