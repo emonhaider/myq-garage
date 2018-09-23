@@ -1,7 +1,7 @@
 // const serverless = require('serverless-http');
 import * as serverless from "serverless-http";
 import * as express from "express";
-import { MyQService } from "./service/myQService";
+import { MyQService } from "./service/myQService.spec";
 
 const app = express();
 const myQService = new MyQService();

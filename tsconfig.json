@@ -22,7 +22,7 @@
     "enable": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*", "test/unit/myQService.ts"
   ],
   "exclude": [
     "node_modules"
