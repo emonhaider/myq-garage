@@ -62,3 +62,6 @@ typings/
 
 # tsc output
 dist/
+
+#serverless
+.serverless

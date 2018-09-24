@@ -8,6 +8,7 @@ const myQService = new MyQService();
 describe("My Q Service", () => {
   it("should return hello world", done => {
     const result = myQService.process();
-    expect(result.data).to.be.equal("Hello World");
+    expect(result.data).to.be.equal("Hello World!");
+    done();
   });
 });
