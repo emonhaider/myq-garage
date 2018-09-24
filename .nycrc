@@ -18,7 +18,6 @@
   ],
   "reporter": [
     "text-summary",
-    "teamcity",
     "html"
   ],
   "sourceMap": true,
