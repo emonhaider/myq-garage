@@ -1,6 +1,6 @@
 # myq-garage-monitor
 
-[![Build Status](https://travis-ci.com/emonhaider/myq-garage.svg?branch=master)](https://travis-ci.com/emonhaider/myq-garage)
+[![Build Status](https://travis-ci.com/emonhaider/myq-garage-monitor.svg?branch=master)](https://travis-ci.com/emonhaider/myq-garage-monitor)
 
 The primary function of AWS Lambda is to ping the MyQ api on behalf of the user and check the status of the user's garage door. If the garage door was found open longer than the window configured by the user, the application will attempt to close the door.
 
