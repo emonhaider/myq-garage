@@ -7,9 +7,9 @@ import { DoorToggle } from '../enum/doorToggle';
 export class MyQService {
   private myQAccount: any;
   constructor() {
-    // if (!process.env.MY_Q_USERNAME && !process.env.MY_Q_PWD) {
-    //   throw new Error('myq username or password not provided');
-    // }
+    if (!process.env.MY_Q_USERNAME && !process.env.MY_Q_PWD) {
+      throw new Error('myq username or password not provided');
+    }
     this.myQAccount = new MyQApi(process.env.MY_Q_USERNAME, process.env.MY_Q_PWD);
   }
 
@@ -30,9 +30,7 @@ export class MyQService {
   }
 
   async login() {
-    return true;
-    // const result = await this.myQAccount.login();
-    // if (result.returnCode != 0) throw new Error('Login failed');
+    const result = await this.myQAccount.login();
+    if (result.returnCode != 0) throw new Error('Login failed');
   }
-
 }

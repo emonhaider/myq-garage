@@ -1,5 +1,6 @@
 import { GarageMonitorService } from "./service/garageMonitorService";
+import { MyQService } from "./service/myQService";
 
-console.log('Test');
-const garageMonitorService = new GarageMonitorService();
+const myQService = new MyQService();
+const garageMonitorService = new GarageMonitorService(myQService);
 garageMonitorService.monitor();
