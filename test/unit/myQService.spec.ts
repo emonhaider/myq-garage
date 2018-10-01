@@ -9,6 +9,9 @@ import { MyQService } from "../../src/service/myQService";
 import { Device } from "../../src/model/device";
 import { DoorState } from "../../src/enum/doorToggle";
 
+process.env.MY_Q_USERNAME = 'test';
+process.env.MY_Q_PWD = 'test';
+
 let closedDevice: Device = {
   id: 1,
   typeId: 2,
@@ -51,9 +54,6 @@ describe("My Q Service", () => {
   let setDeviceStatusSpy;
   const myQService = new MyQService();
   const monitorService = new GarageMonitorService(myQService);
-  process.env.MY_Q_USERNAME = 'test';
-  process.env.MY_Q_PWD = 'test';
-
   beforeEach(() => {
     sandbox = sinon.createSandbox();
     getDeviceStatusStub = sandbox.stub(myQService, 'getDeviceStatus');
