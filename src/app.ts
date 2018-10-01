@@ -1,13 +1,12 @@
-// const serverless = require('serverless-http');
 import * as serverless from "serverless-http";
 import * as express from "express";
-import { MyQService } from "./service/myQService.spec";
+import { GarageMonitorService } from "./service/garageMonitorService";
 
 const app = express();
-const myQService = new MyQService();
+const myQService = new GarageMonitorService();
 
 app.get("/", (req, res) => {
-  res.send(myQService.process());
+  res.send(myQService.monitor());
 });
 
 const handler = serverless(app);
