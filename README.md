@@ -6,6 +6,6 @@ The primary function of AWS Lambda is to ping the MyQ api on behalf of the user 
 
 The function will be triggered via CloudWatch Event.
 
-The MyQ api credentials will be stored in AWS Secrets manager and will be read bootstrapping time. The credentials will cached for configured period of time to limit calls to Secrets Manageer.
+The MyQ api credentials will be stored in AWS Secrets manager and will be read during bootstrapping of the application. The credentials will cached for configured period of time to limit calls to Secrets Manageer.
 
 Serverless framework (https://serverless.com/learn/overview) was used generate the necesary cloudformation stack to deploy the function. 
