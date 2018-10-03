@@ -5,12 +5,7 @@ import { Device } from '../model/device';
 import { DoorToggle } from '../enum/doorToggle';
 
 export class MyQService {
-  private myQAccount: any;
-  constructor() {
-    if (!process.env.MY_Q_USERNAME && !process.env.MY_Q_PWD) {
-      throw new Error('myq username or password not provided');
-    }
-    this.myQAccount = new MyQApi(process.env.MY_Q_USERNAME, process.env.MY_Q_PWD);
+  constructor(private myQAccount: any) {
   }
 
   async getDeviceStatus(deviceType: number): Promise<Device> {
