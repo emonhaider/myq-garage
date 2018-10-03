@@ -4,13 +4,13 @@ import { GarageMonitorService } from "./service/garageMonitorService";
 import { MyQService } from "./service/myQService";
 const app = express();
 
-const myQService = new MyQService();
-const garageMonitorService = new GarageMonitorService(myQService);
+// const myQService = new MyQService();
+// const garageMonitorService = new GarageMonitorService(myQService);
 
-app.get("/", (req, res) => {
-  res.send(garageMonitorService.monitor());
-});
+// app.get("/", (req, res) => {
+//   res.send(garageMonitorService.monitor());
+// });
 
-const handler = serverless(app);
+// const handler = serverless(app);
 
-export { handler };
+// export { handler };
