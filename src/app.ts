@@ -1,16 +1,22 @@
 import * as serverless from "serverless-http";
 import * as express from "express";
-import { GarageMonitorService } from "./service/garageMonitorService";
-import { MyQService } from "./service/myQService";
+import { CloudWatchEventService } from "./service/cloudWatchEventService";
+import * as _ from 'underscore';
+
 const app = express();
 
-// const myQService = new MyQService();
-// const garageMonitorService = new GarageMonitorService(myQService);
+const cloudWatchEventService = new CloudWatchEventService();
 
-// app.get("/", (req, res) => {
-//   res.send(garageMonitorService.monitor());
-// });
+app.get("/events", async (req, res) => {
+  const data = await cloudWatchEventService.getEvents('myq-garage-monitor-scheduled-event');
+  res.send(data);
+});
 
-// const handler = serverless(app);
+app.get("/events/:name", async (req, res) => {
+  const data = await cloudWatchEventService.getEvents(req.params.name);
+  res.send(_.first(data));
+});
 
-// export { handler };
+const handler = serverless(app);
+
+export { handler };

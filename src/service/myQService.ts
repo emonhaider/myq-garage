@@ -1,5 +1,3 @@
-import * as MyQApi from 'myq-api';
-import { DeviceType } from '../enum/deviceTypes';
 import * as _ from 'underscore';
 import { Device } from '../model/device';
 import { DoorToggle } from '../enum/doorToggle';
